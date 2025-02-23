@@ -13,16 +13,20 @@ pipeline {
             }
             steps {
                 script {
-                    // Check if the virtual environment exists
-                    def venvExists = fileExists('venv')
+                    // Ensure we're operating in the current workspace
+                    def workspaceDir = pwd()
+                    echo "Current Workspace: ${workspaceDir}"
+
+                    // Check if the virtual environment exists in the workspace
+                    def venvExists = fileExists("${workspaceDir}/venv")
                     if (!venvExists) {
                         // If venv doesn't exist, create it
-                        sh '''
-                            python3 -m venv venv
-                            source venv/bin/activate
+                        sh """
+                            python3 -m venv ${workspaceDir}/venv
+                            source ${workspaceDir}/venv/bin/activate
                             which python3
                             python3 --version
-                        '''
+                        """
                     } else {
                         echo "Virtual environment already exists."
                     }
@@ -35,10 +39,17 @@ pipeline {
                 expression { return params.STAGE_TO_RUN == 'Create Virtual Environment' || params.STAGE_TO_RUN == 'Run Embedding Script' || params.STAGE_TO_RUN == 'Run Main Script' }
             }
             steps {
-                sh '''
-                    source venv/bin/activate
-                    pip install -r requirements.txt
-                '''
+                script {
+                    // Ensure we're operating in the current workspace
+                    def workspaceDir = pwd()
+                    echo "Current Workspace: ${workspaceDir}"
+
+                    // Install dependencies in the current workspace's venv
+                    sh """
+                        source ${workspaceDir}/venv/bin/activate
+                        pip install -r ${workspaceDir}/requirements.txt
+                    """
+                }
             }
         }
 
@@ -47,11 +58,17 @@ pipeline {
                 expression { return params.STAGE_TO_RUN == 'Run MLflow' }
             }
             steps {
-                sh '''
-                    source venv/bin/activate
-                    mlflow ui
-                    echo "MLflow server running..."
-                '''
+                script {
+                    def workspaceDir = pwd()
+                    echo "Current Workspace: ${workspaceDir}"
+
+                    // Run MLflow UI in the current workspace's venv
+                    sh """
+                        source ${workspaceDir}/venv/bin/activate
+                        mlflow ui
+                        echo "MLflow server running..."
+                    """
+                }
             }
         }
 
@@ -60,10 +77,16 @@ pipeline {
                 expression { return params.STAGE_TO_RUN == 'Run Embedding Script' }
             }
             steps {
-                sh '''
-                    source venv/bin/activate
-                    python3 embedding.py
-                '''
+                script {
+                    def workspaceDir = pwd()
+                    echo "Current Workspace: ${workspaceDir}"
+
+                    // Run the embedding script in the current workspace's venv
+                    sh """
+                        source ${workspaceDir}/venv/bin/activate
+                        python3 ${workspaceDir}/embedding.py
+                    """
+                }
             }
         }
 
@@ -72,10 +95,16 @@ pipeline {
                 expression { return params.STAGE_TO_RUN == 'Run Main Script' }
             }
             steps {
-                sh '''
-                    source venv/bin/activate
-                    python3 main.py
-                '''
+                script {
+                    def workspaceDir = pwd()
+                    echo "Current Workspace: ${workspaceDir}"
+
+                    // Run the main script in the current workspace's venv
+                    sh """
+                        source ${workspaceDir}/venv/bin/activate
+                        python3 ${workspaceDir}/main.py
+                    """
+                }
             }
         }
 
@@ -84,11 +113,15 @@ pipeline {
                 expression { return params.STAGE_TO_RUN == 'Cleanup' }
             }
             steps {
-                sh '''
+                script {
+                    def workspaceDir = pwd()
+                    echo "Current Workspace: ${workspaceDir}"
+
+                    // Remove virtual environment in the current workspace
                     echo "Removing virtual environment..."
-                    rm -rf venv
+                    sh "rm -rf ${workspaceDir}/venv"
                     echo "Cleanup completed!"
-                '''
+                }
             }
         }
     }
