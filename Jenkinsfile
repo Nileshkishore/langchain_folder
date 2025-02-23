@@ -20,6 +20,17 @@ pipeline {
                 '''
             }
         }
+        stage('Install Dependencies') {
+            when {
+                expression { return params.STAGE_TO_RUN == 'Create Virtual Environment' }
+            }
+            steps {
+                sh '''
+                    source venv/bin/activate
+                    pip install -r requirenments.txt
+                '''
+            }
+        }
 
         stage('Run MLflow') {
             when {
