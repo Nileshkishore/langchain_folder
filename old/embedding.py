@@ -6,7 +6,6 @@ from langchain_chroma import Chroma
 
 # Disable parallelism warning
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
-
 # Define paths
 folder_path = "00-Sports-Articles"
 persist_directory = "./chroma_db"
