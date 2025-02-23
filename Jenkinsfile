@@ -24,7 +24,7 @@ pipeline {
             steps {
                 sh '''
                     source venv/bin/activate
-                    pip install -r rrequirenments.txt
+                    pip install -r requirenments.txt
                 '''
             }
         }
