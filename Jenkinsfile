@@ -12,22 +12,32 @@ pipeline {
                 expression { return params.STAGE_TO_RUN == 'Create Virtual Environment' }
             }
             steps {
-                sh '''
-                    python3 -m venv venv
-                    source venv/bin/activate
-                    which python3
-                    python3 --version
-                '''
+                script {
+                    // Check if the virtual environment exists
+                    def venvExists = fileExists('venv')
+                    if (!venvExists) {
+                        // If venv doesn't exist, create it
+                        sh '''
+                            python3 -m venv venv
+                            source venv/bin/activate
+                            which python3
+                            python3 --version
+                        '''
+                    } else {
+                        echo "Virtual environment already exists."
+                    }
+                }
             }
         }
+
         stage('Install Dependencies') {
             when {
-                expression { return params.STAGE_TO_RUN == 'Create Virtual Environment' }
+                expression { return params.STAGE_TO_RUN == 'Create Virtual Environment' || params.STAGE_TO_RUN == 'Run Embedding Script' || params.STAGE_TO_RUN == 'Run Main Script' }
             }
             steps {
                 sh '''
                     source venv/bin/activate
-                    pip install -r requirenments.txt
+                    pip install -r requirements.txt
                 '''
             }
         }
