@@ -1,0 +1,25 @@
+# Model Configuration
+model:
+  name: "llama3.2"
+  embedding_model: "all-MiniLM-L6-v2"
+
+# Storage Configuration
+storage:
+  persist_directory: "./chroma_db"
+
+# MLflow Configuration
+mlflow:
+  experiment_name: "LLM_RAG_Logging"
+
+# Cost Parameters (per 1K tokens)
+costs:
+  input_cost_per_1k: 0.003   # $3 per MTok
+  output_cost_per_1k: 0.015  # $15 per MTok
+
+# Environment Variables
+environment:
+  tokenizers_parallelism: "false"
+
+# Retrieval Configuration
+retrieval:
+  top_k: 4
