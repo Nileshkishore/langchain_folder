@@ -63,11 +63,11 @@ pipeline {
                     echo "Current Workspace: ${workspaceDir}"
 
                     // Run MLflow UI in the background on port 5000
-                    sh """
-                        source ${workspaceDir}/venv/bin/activate
-                        nohup mlflow ui -p 5000 > ${workspaceDir}/mlflow.log 2>&1 &
-                        echo "MLflow server running on port 5000 in the background..."
-                    """
+                sh """
+                    source ${workspaceDir}/venv/bin/activate
+                    mlflow ui -p 5000 & disown
+                    echo "MLflow server is running on port 5000 in the background."
+                """
                 }
             }
         }
