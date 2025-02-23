@@ -65,7 +65,7 @@ pipeline {
                     // Run MLflow UI in the background on port 5000
                 sh """
                     source ${workspaceDir}/venv/bin/activate
-                    mlflow ui &
+                    mlflow ui
                     echo "MLflow server is running on port 5000 in the background."
                 """
                 }
