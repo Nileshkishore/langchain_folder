@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+        PATH = "/Users/nileshkishore/anaconda3/bin:$PATH"
+    }
     stages {
         stage('Check Python Version') {
             steps {
