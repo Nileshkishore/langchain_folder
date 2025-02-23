@@ -39,7 +39,7 @@ pipeline {
             steps {
                 sh '''
                     source venv/bin/activate
-                    mlflow ui --host 0.0.0.0 --port 5000 &
+                    mlflow ui
                     echo "MLflow server running..."
                 '''
             }
