@@ -7,7 +7,7 @@ def main():
 
     while True:
         # Get user input
-        user_input = input("\nAsk something (type 'exit' to quit): ")
+        user_input = "who is virat"#input("\nAsk something (type 'exit' to quit): ")
         
         if user_input.lower() == "exit":
             print("Exiting chat...")
