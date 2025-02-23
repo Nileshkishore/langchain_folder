@@ -62,11 +62,11 @@ pipeline {
                     def workspaceDir = pwd()
                     echo "Current Workspace: ${workspaceDir}"
 
-                    // Run MLflow UI in the current workspace's venv
+                    // Run MLflow UI in the background on port 5000
                     sh """
                         source ${workspaceDir}/venv/bin/activate
-                        mlflow ui
-                        echo "MLflow server running..."
+                        nohup mlflow ui -p 5000 > ${workspaceDir}/mlflow.log 2>&1 &
+                        echo "MLflow server running on port 5000 in the background..."
                     """
                 }
             }
@@ -117,6 +117,14 @@ pipeline {
                     def workspaceDir = pwd()
                     echo "Current Workspace: ${workspaceDir}"
 
+                    // Clean up: Kill the MLflow server and remove virtual environment
+                    echo "Cleaning up..."
+                    
+                    // Kill MLflow server process
+                    sh """
+                        pkill -f 'mlflow ui' || echo 'No MLflow process found to kill'
+                    """
+                    
                     // Remove virtual environment in the current workspace
                     echo "Removing virtual environment..."
                     sh "rm -rf ${workspaceDir}/venv"
