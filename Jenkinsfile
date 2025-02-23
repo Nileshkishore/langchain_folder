@@ -1,16 +1,16 @@
 pipeline {
     agent any
+    parameters {
+        choice(name: 'STAGE_TO_RUN', choices: ['Create Virtual Environment', 'Run MLflow', 'Run Embedding Script', 'Run Main Script', 'Cleanup'], description: 'Choose which stage to execute')
+    }
     environment {
         PATH = "/Users/nileshkishore/anaconda3/bin:$PATH"
     }
     stages {
-        stage('Check Python Version') {
-            steps {
-                sh 'which python3'
-                sh 'python3 --version'
-            }
-        }
         stage('Create Virtual Environment') {
+            when {
+                expression { return params.STAGE_TO_RUN == 'Create Virtual Environment' }
+            }
             steps {
                 sh '''
                     python3 -m venv venv
@@ -20,15 +20,24 @@ pipeline {
                 '''
             }
         }
-        stage('Install Dependencies') {
+
+        stage('Run MLflow') {
+            when {
+                expression { return params.STAGE_TO_RUN == 'Run MLflow' }
+            }
             steps {
                 sh '''
                     source venv/bin/activate
-                    pip install -r requirenments.txt
+                    mlflow ui --host 0.0.0.0 --port 5000 &
+                    echo "MLflow server running..."
                 '''
             }
         }
+
         stage('Run Embedding Script') {
+            when {
+                expression { return params.STAGE_TO_RUN == 'Run Embedding Script' }
+            }
             steps {
                 sh '''
                     source venv/bin/activate
@@ -36,14 +45,35 @@ pipeline {
                 '''
             }
         }
+
+        stage('Run Main Script') {
+            when {
+                expression { return params.STAGE_TO_RUN == 'Run Main Script' }
+            }
+            steps {
+                sh '''
+                    source venv/bin/activate
+                    python3 main.py
+                '''
+            }
+        }
+
+        stage('Cleanup') {
+            when {
+                expression { return params.STAGE_TO_RUN == 'Cleanup' }
+            }
+            steps {
+                sh '''
+                    echo "Removing virtual environment..."
+                    rm -rf venv
+                    echo "Cleanup completed!"
+                '''
+            }
+        }
     }
     post {
         always {
-            sh '''
-                echo "Removing virtual environment..."
-                rm -rf venv
-                echo "Cleanup completed!"
-            '''
+            echo "Pipeline execution completed"
         }
     }
 }
