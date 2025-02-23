@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nileshkishore/Desktop/langchain_folder/mlruns/411841080002480001/c39a932e34174e01ab59c1908a6efa29/artifacts
+end_time: 1740313788165
+entry_point_name: ''
+experiment_id: '411841080002480001'
+lifecycle_stage: active
+run_id: c39a932e34174e01ab59c1908a6efa29
+run_name: crawling-rat-710
+run_uuid: c39a932e34174e01ab59c1908a6efa29
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740313788144
+status: 3
+tags: []
+user_id: nileshkishore

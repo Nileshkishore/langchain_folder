@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nileshkishore/Desktop/langchain_folder/mlruns/411841080002480001/faa1015629964da0ab7c2291f578e519/artifacts
+end_time: 1740311128621
+entry_point_name: ''
+experiment_id: '411841080002480001'
+lifecycle_stage: active
+run_id: faa1015629964da0ab7c2291f578e519
+run_name: sedate-toad-0
+run_uuid: faa1015629964da0ab7c2291f578e519
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740311128599
+status: 3
+tags: []
+user_id: nileshkishore

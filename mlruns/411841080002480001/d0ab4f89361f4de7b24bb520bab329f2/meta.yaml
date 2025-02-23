@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nileshkishore/Desktop/langchain_folder/mlruns/411841080002480001/d0ab4f89361f4de7b24bb520bab329f2/artifacts
+end_time: 1740310848812
+entry_point_name: ''
+experiment_id: '411841080002480001'
+lifecycle_stage: active
+run_id: d0ab4f89361f4de7b24bb520bab329f2
+run_name: treasured-ox-18
+run_uuid: d0ab4f89361f4de7b24bb520bab329f2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740310848789
+status: 3
+tags: []
+user_id: nileshkishore

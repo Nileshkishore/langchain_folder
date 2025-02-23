@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nileshkishore/Desktop/langchain_folder/mlruns/411841080002480001/d28a3490425646b3a11c6be7845cb25a/artifacts
+end_time: 1740311061399
+entry_point_name: ''
+experiment_id: '411841080002480001'
+lifecycle_stage: active
+run_id: d28a3490425646b3a11c6be7845cb25a
+run_name: rumbling-bird-856
+run_uuid: d28a3490425646b3a11c6be7845cb25a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740311061377
+status: 3
+tags: []
+user_id: nileshkishore

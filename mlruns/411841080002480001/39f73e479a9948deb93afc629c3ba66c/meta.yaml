@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nileshkishore/Desktop/langchain_folder/mlruns/411841080002480001/39f73e479a9948deb93afc629c3ba66c/artifacts
+end_time: 1740314135681
+entry_point_name: ''
+experiment_id: '411841080002480001'
+lifecycle_stage: active
+run_id: 39f73e479a9948deb93afc629c3ba66c
+run_name: rare-hound-701
+run_uuid: 39f73e479a9948deb93afc629c3ba66c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740314135637
+status: 3
+tags: []
+user_id: nileshkishore

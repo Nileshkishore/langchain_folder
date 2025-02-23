@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nileshkishore/Desktop/langchain_folder/mlruns/411841080002480001/d363d2a0e3554cdea5219735962e1a3f/artifacts
+end_time: 1740299195636
+entry_point_name: ''
+experiment_id: '411841080002480001'
+lifecycle_stage: active
+run_id: d363d2a0e3554cdea5219735962e1a3f
+run_name: auspicious-koi-996
+run_uuid: d363d2a0e3554cdea5219735962e1a3f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740299195616
+status: 3
+tags: []
+user_id: nileshkishore

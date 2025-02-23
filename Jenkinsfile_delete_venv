@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+    stages {
+        stage('Delete Virtual Environment') {
+            steps {
+                sh '''
+                    echo "Removing virtual environment..."
+                    rm -rf venv
+                    echo "Cleanup completed!"
+                '''
+            }
+        }
+    }
+}

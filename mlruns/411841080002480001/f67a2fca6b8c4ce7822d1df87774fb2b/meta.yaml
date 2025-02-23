@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nileshkishore/Desktop/langchain_folder/mlruns/411841080002480001/f67a2fca6b8c4ce7822d1df87774fb2b/artifacts
+end_time: 1740312150037
+entry_point_name: ''
+experiment_id: '411841080002480001'
+lifecycle_stage: active
+run_id: f67a2fca6b8c4ce7822d1df87774fb2b
+run_name: traveling-turtle-506
+run_uuid: f67a2fca6b8c4ce7822d1df87774fb2b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740312150014
+status: 3
+tags: []
+user_id: nileshkishore

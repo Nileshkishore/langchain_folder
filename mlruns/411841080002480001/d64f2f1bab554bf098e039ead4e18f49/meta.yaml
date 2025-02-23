@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nileshkishore/Desktop/langchain_folder/mlruns/411841080002480001/d64f2f1bab554bf098e039ead4e18f49/artifacts
+end_time: 1740313823039
+entry_point_name: ''
+experiment_id: '411841080002480001'
+lifecycle_stage: active
+run_id: d64f2f1bab554bf098e039ead4e18f49
+run_name: gregarious-wolf-416
+run_uuid: d64f2f1bab554bf098e039ead4e18f49
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740313823012
+status: 3
+tags: []
+user_id: nileshkishore

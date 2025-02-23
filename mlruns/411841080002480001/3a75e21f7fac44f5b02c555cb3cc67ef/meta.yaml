@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nileshkishore/Desktop/langchain_folder/mlruns/411841080002480001/3a75e21f7fac44f5b02c555cb3cc67ef/artifacts
+end_time: 1740298495968
+entry_point_name: ''
+experiment_id: '411841080002480001'
+lifecycle_stage: active
+run_id: 3a75e21f7fac44f5b02c555cb3cc67ef
+run_name: efficient-shoat-245
+run_uuid: 3a75e21f7fac44f5b02c555cb3cc67ef
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740298495950
+status: 3
+tags: []
+user_id: nileshkishore

@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nileshkishore/Desktop/langchain_folder/mlruns/411841080002480001/9aa92f2fc132482e81df4851e067cc92/artifacts
+end_time: 1740298846692
+entry_point_name: ''
+experiment_id: '411841080002480001'
+lifecycle_stage: active
+run_id: 9aa92f2fc132482e81df4851e067cc92
+run_name: intrigued-midge-897
+run_uuid: 9aa92f2fc132482e81df4851e067cc92
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740298846675
+status: 4
+tags: []
+user_id: nileshkishore

@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nileshkishore/Desktop/langchain_folder/mlruns/411841080002480001/f1c1389a0bcc43a3b01ed5a4ef56cf38/artifacts
+end_time: 1740312359410
+entry_point_name: ''
+experiment_id: '411841080002480001'
+lifecycle_stage: active
+run_id: f1c1389a0bcc43a3b01ed5a4ef56cf38
+run_name: bustling-goat-420
+run_uuid: f1c1389a0bcc43a3b01ed5a4ef56cf38
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740312359390
+status: 3
+tags: []
+user_id: nileshkishore

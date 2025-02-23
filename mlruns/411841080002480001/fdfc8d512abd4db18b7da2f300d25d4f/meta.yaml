@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nileshkishore/Desktop/langchain_folder/mlruns/411841080002480001/fdfc8d512abd4db18b7da2f300d25d4f/artifacts
+end_time: 1740312433421
+entry_point_name: ''
+experiment_id: '411841080002480001'
+lifecycle_stage: active
+run_id: fdfc8d512abd4db18b7da2f300d25d4f
+run_name: colorful-fox-267
+run_uuid: fdfc8d512abd4db18b7da2f300d25d4f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740312433401
+status: 3
+tags: []
+user_id: nileshkishore
