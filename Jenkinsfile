@@ -59,9 +59,6 @@ pipeline {
             }
             steps {
                 script {
-                    // Define the workspace directory explicitly
-                    def workspaceDir = '/Users/nileshkishore/.jenkins/workspace/langchain'
-                    echo "Using workspace directory: ${workspaceDir}"
 
                     // Run MLflow UI on a specific port (5000) using the workspace directory
                     sh """
@@ -92,16 +89,24 @@ pipeline {
             }
         }
 
-        stage('Run Main Script') {
+        stage('Run MLflow and Main Script') {
             when {
-                expression { return params.STAGE_TO_RUN == 'Run Main Script' }
+                expression { return params.STAGE_TO_RUN == 'Run MLflow and Main Script' }
             }
             steps {
                 script {
+                    // Get the current workspace directory dynamically
                     def workspaceDir = pwd()
-                    echo "Current Workspace: ${workspaceDir}"
+                    echo "Using current workspace directory: ${workspaceDir}"
 
-                    // Run the main script in the current workspace's venv
+                    // Run MLflow UI in the background on port 5000
+                    sh """
+                        source ${workspaceDir}/venv/bin/activate
+                        mlflow ui &
+                        echo "MLflow server is running on port 5000 in the background."
+                    """
+
+                    // Now, run the main.py script in the current workspace's venv
                     sh """
                         source ${workspaceDir}/venv/bin/activate
                         python3 ${workspaceDir}/main.py
@@ -109,7 +114,6 @@ pipeline {
                 }
             }
         }
-
         stage('Cleanup') {
             when {
                 expression { return params.STAGE_TO_RUN == 'Cleanup' }
