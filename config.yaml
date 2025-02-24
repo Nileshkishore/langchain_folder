@@ -1,6 +1,6 @@
 # Model Configuration
 model:
-  name: "llama3.2"
+  name: "deepseek-r1"
   embedding_model: "all-MiniLM-L6-v2"
 
 # Storage Configuration
