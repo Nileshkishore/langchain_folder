@@ -3,7 +3,6 @@ from typing import List, Dict, Any
 from langchain.schema import Document
 import os
 import mlflow.langchain
-from langchain.callbacks.tracers import trace
 
 class MLflowLogger:
     def __init__(self, config: dict):
