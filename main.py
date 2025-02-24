@@ -29,6 +29,7 @@ def rag_interaction(system_prompt, user_input, assistant_prompt=None):
 
         # Generate response using structured messages
         result = rag_system.generate_response(messages, context)
+        print(messages)
         
         # Log to MLflow in background
         thread = threading.Thread(
