@@ -6,6 +6,7 @@ class MLflowLogger:
     def __init__(self, config: dict):
         self.config = config
         mlflow.set_experiment(config['mlflow']['experiment_name'])
+        mlflow.langchain.autolog()
 
     def log_rag_interaction(
         self,

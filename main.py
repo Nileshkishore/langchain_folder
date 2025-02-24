@@ -16,7 +16,7 @@ def rag_interaction(system_prompt, user_input, assistant_prompt=None):
         
         # Get context from top document or use default message
         context = top_doc.page_content if top_doc else "No relevant document found."
-        
+        print(context)
         # Construct full prompt for the model
         messages = [
             {"role": "system", "content": system_prompt},
