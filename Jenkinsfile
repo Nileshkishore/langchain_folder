@@ -89,7 +89,7 @@ pipeline {
             }
         }
 
-        stage('Run MLflow and Main Script') {
+        stage('Run Main Script') {
             when {
                 expression { return params.STAGE_TO_RUN == 'Run MLflow and Main Script' }
             }
