@@ -52,13 +52,14 @@ def main():
         inputs=[
             gr.Textbox(label="System Prompt", placeholder="Provide system instructions"),
             gr.Textbox(label="User Prompt", placeholder="Ask something"),
-            gr.Textbox(label="Assistant Prompt (Optional)", placeholder="Previous assistant response", optional=True)
+            gr.Textbox(label="Assistant Prompt (Optional)", placeholder="Previous assistant response")  # Removed 'optional=True'
         ],
         outputs=gr.Textbox(label="Answer")  # Only display the answer
     )
     
     # Launch the interface
     interface.launch()
+
 
 if __name__ == "__main__":
     main()
