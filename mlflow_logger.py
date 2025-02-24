@@ -76,6 +76,6 @@ class MLflowLogger:
         mlflow.log_metric("output_cost_usd", round(output_cost, 6))
         mlflow.log_metric("total_cost_usd", round(total_cost, 6))
 
-    @mlflow.trace
+    @mlflow.trace(name="custom_name", attributes={"key": "value"})
     def _log_tags(self, result: Dict[str, Any]):
         mlflow.set_tag("date_time", result.get("created_at", "Unknown Time"))
