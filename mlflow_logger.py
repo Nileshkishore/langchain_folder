@@ -11,21 +11,23 @@ class MLflowLogger:
         self,
         user_input: str,
         prompt: str,
+        system_prompt: str,
         result: Dict[str, Any],
         retrieved_docs: List[Document],
         cosine_score: float
     ):
         with mlflow.start_run():
-            self._log_basic_params(user_input, prompt, result)
+            self._log_basic_params(user_input, prompt, result, system_prompt)
             self._log_document_info(retrieved_docs)
             self._log_metrics(result, cosine_score)
             self._log_response_info(result)
             self._log_cost_metrics(result)
             self._log_tags(result)
 
-    def _log_basic_params(self, user_input: str, prompt: str, result: Dict[str, Any]):
+    def _log_basic_params(self, user_input: str, prompt: str, result: Dict[str, Any], system_prompt: str):
         mlflow.log_param("model_used", result.get("model", "Unknown Model"))
         mlflow.log_param("user_prompt", user_input)
+        mlflow.log_param("system_prompt", system_prompt)
         mlflow.log_param("full_prompt", prompt)
 
     def _log_document_info(self, retrieved_docs: List[Document]):

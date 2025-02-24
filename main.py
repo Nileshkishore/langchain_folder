@@ -34,7 +34,7 @@ def rag_interaction(system_prompt, user_input, assistant_prompt=None):
         # Log to MLflow in background
         thread = threading.Thread(
             target=rag_system.mlflow_logger.log_rag_interaction,
-            args=(user_input, f"Context: {context}\n\nQuestion: {user_input}", 
+            args=(user_input, f"Context: {context}\n\nQuestion: {user_input}",system_prompt, 
                   result, [top_doc] if top_doc else [], cosine_score)
         )
         thread.daemon = True
