@@ -1,6 +1,7 @@
 import mlflow
 from typing import List, Dict, Any
 from langchain.schema import Document
+import contextlib
 
 class MLflowLogger:
     def __init__(self, config: dict):
@@ -23,16 +24,30 @@ class MLflowLogger:
         retrieved_docs: List[Document],
         cosine_score: float
     ):
-        with mlflow.start_run():
-            self._log_basic_params(user_input, prompt, result, system_prompt)
-            self._log_document_info(retrieved_docs)
-            self._log_metrics(result, cosine_score)
-            self._log_response_info(result)
-            self._log_cost_metrics(result)
-            self._log_tags(result)
+        # Create a run context but don't use the decorator's automatic tracing
+        # for the nested methods
+        with mlflow.start_run(nested=True) as run:
+            # Store run_id to ensure all logs go to the same run
+            run_id = run.info.run_id
+            
+            # Call methods directly without using their trace decoration
+            # This avoids the nested tracing issues
+            self._log_basic_params_impl(user_input, prompt, result, system_prompt)
+            self._log_document_info_impl(retrieved_docs)
+            self._log_metrics_impl(result, cosine_score)
+            self._log_response_info_impl(result)
+            self._log_cost_metrics_impl(result)
+            self._log_tags_impl(result)
+            
+            return run_id
 
+    # Create wrapper methods that have the trace decorator
+    # but internally call implementation methods
     @mlflow.trace
     def _log_basic_params(self, user_input: str, prompt: str, result: Dict[str, Any], system_prompt: str):
+        return self._log_basic_params_impl(user_input, prompt, result, system_prompt)
+        
+    def _log_basic_params_impl(self, user_input: str, prompt: str, result: Dict[str, Any], system_prompt: str):
         mlflow.log_param("model_used", result.get("model", "Unknown Model"))
         mlflow.log_param("user_prompt", user_input)
         mlflow.log_param("system_prompt", system_prompt)
@@ -40,6 +55,9 @@ class MLflowLogger:
 
     @mlflow.trace
     def _log_document_info(self, retrieved_docs: List[Document]):
+        return self._log_document_info_impl(retrieved_docs)
+        
+    def _log_document_info_impl(self, retrieved_docs: List[Document]):
         retrieved_doc_name = (
             retrieved_docs[0].metadata.get("source", "Unknown File")
             if retrieved_docs and isinstance(retrieved_docs[0], Document)
@@ -49,6 +67,9 @@ class MLflowLogger:
 
     @mlflow.trace
     def _log_metrics(self, result: Dict[str, Any], cosine_score: float):
+        return self._log_metrics_impl(result, cosine_score)
+        
+    def _log_metrics_impl(self, result: Dict[str, Any], cosine_score: float):
         mlflow.log_metric("cosine_similarity", cosine_score)
         mlflow.log_metric("processing_time_us", result.get("total_duration", 0))
         mlflow.log_metric("prompt_tokens", result.get("prompt_tokens", 0))
@@ -56,6 +77,9 @@ class MLflowLogger:
 
     @mlflow.trace
     def _log_response_info(self, result: Dict[str, Any]):
+        return self._log_response_info_impl(result)
+        
+    def _log_response_info_impl(self, result: Dict[str, Any]):
         llm_response = result.get("response", "No response generated.")
         with open("llm_response.txt", "w") as f:
             f.write(llm_response)
@@ -65,6 +89,9 @@ class MLflowLogger:
 
     @mlflow.trace
     def _log_cost_metrics(self, result: Dict[str, Any]):
+        return self._log_cost_metrics_impl(result)
+        
+    def _log_cost_metrics_impl(self, result: Dict[str, Any]):
         prompt_tokens = result.get("prompt_tokens", 0)
         generated_tokens = result.get("generated_tokens", 0)
 
@@ -78,4 +105,21 @@ class MLflowLogger:
 
     @mlflow.trace(name="custom_name", attributes={"key": "value"})
     def _log_tags(self, result: Dict[str, Any]):
+        return self._log_tags_impl(result)
+        
+    def _log_tags_impl(self, result: Dict[str, Any]):
         mlflow.set_tag("date_time", result.get("created_at", "Unknown Time"))
+        
+    # Method for direct use when you want to use trace decorators separately
+    def log_with_traces(self, user_input, prompt, system_prompt, result, retrieved_docs, cosine_score):
+        """
+        Alternative method that uses the traced methods directly
+        """
+        with mlflow.start_run() as run:
+            self._log_basic_params(user_input, prompt, result, system_prompt)
+            self._log_document_info(retrieved_docs)
+            self._log_metrics(result, cosine_score)
+            self._log_response_info(result)
+            self._log_cost_metrics(result)
+            self._log_tags(result)
+            return run.info.run_id
