@@ -1,10 +1,13 @@
 import mlflow
 from typing import List, Dict, Any, Optional
 from langchain.schema import Document
+import os
+import mlflow.langchain
 
 class MLflowLogger:
     def __init__(self, config: dict):
         self.config = config
+        os.environ["LANGCHAIN_TRACING_V2"] = "true"
         mlflow.set_experiment(config['mlflow']['experiment_name'])
         mlflow.langchain.autolog()
 
