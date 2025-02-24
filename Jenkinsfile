@@ -47,6 +47,7 @@ pipeline {
                     // Install dependencies in the current workspace's venv
                     sh """
                         source ${workspaceDir}/venv/bin/activate
+                        pip install --upgrade pip
                         pip install -r ${workspaceDir}/requirements.txt
                     """
                 }
