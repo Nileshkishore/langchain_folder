@@ -10,7 +10,6 @@ from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 from custom_ollama import OllamaLLMWithMetadata
 from mlflow_logger import MLflowLogger
-import mlflow
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -97,7 +96,7 @@ class RAGSystem:
         except Exception as e:
             logger.error(f"Error retrieving documents: {e}")
             return None, 0.0, []
-    @mlflow.trace
+        
     def generate_response(self, user_input: str, context: str) -> dict:
         """Generate response with optimized prompt."""
         try:
