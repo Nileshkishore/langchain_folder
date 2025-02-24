@@ -109,7 +109,7 @@ pipeline {
                     // Now, run the main.py script in the current workspace's venv
                     sh """
                         source ${workspaceDir}/venv/bin/activate
-                        python3 ${workspaceDir}/main.py
+                        python3 ${workspaceDir}/streamlit run main_streamlit.py
                     """
                 }
             }
