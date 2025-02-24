@@ -59,18 +59,20 @@ pipeline {
             }
             steps {
                 script {
-                    def workspaceDir = pwd()
-                    echo "Current Workspace: ${workspaceDir}"
+                    // Define the workspace directory explicitly
+                    def workspaceDir = '/Users/nileshkishore/.jenkins/workspace/langchain'
+                    echo "Using workspace directory: ${workspaceDir}"
 
-                    // Run MLflow UI in the background on port 5000
-                sh """
-                    source ${workspaceDir}/venv/bin/activate
-                    mlflow ui
-                    echo "MLflow server is running on port 5000 in the background."
-                """
+                    // Run MLflow UI on a specific port (5000) using the workspace directory
+                    sh """
+                        source ${workspaceDir}/venv/bin/activate
+                        nohup mlflow ui
+                        echo "MLflow server is running on port 5000 in the background."
+                    """
                 }
             }
         }
+
 
         stage('Run Embedding Script') {
             when {
