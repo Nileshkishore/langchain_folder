@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nileshkishore/Desktop/langchain_folder/mlruns/411841080002480001/dcfb82dce69c4e3ea9c7e5aea6fc9af9/artifacts
+end_time: 1740365068181
+entry_point_name: ''
+experiment_id: '411841080002480001'
+lifecycle_stage: active
+run_id: dcfb82dce69c4e3ea9c7e5aea6fc9af9
+run_name: exultant-whale-447
+run_uuid: dcfb82dce69c4e3ea9c7e5aea6fc9af9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740365068157
+status: 3
+tags: []
+user_id: nileshkishore

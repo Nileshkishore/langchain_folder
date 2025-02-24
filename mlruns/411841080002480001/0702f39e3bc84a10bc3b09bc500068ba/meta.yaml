@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nileshkishore/Desktop/langchain_folder/mlruns/411841080002480001/0702f39e3bc84a10bc3b09bc500068ba/artifacts
+end_time: 1740365121503
+entry_point_name: ''
+experiment_id: '411841080002480001'
+lifecycle_stage: active
+run_id: 0702f39e3bc84a10bc3b09bc500068ba
+run_name: whimsical-toad-185
+run_uuid: 0702f39e3bc84a10bc3b09bc500068ba
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740365121454
+status: 3
+tags: []
+user_id: nileshkishore
