@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nileshkishore/Desktop/langchain_folder/old/mlruns/187878786416457278/13e7d63e798a434c82bc75231c04ba5b/artifacts
+end_time: 1740459401033
+entry_point_name: ''
+experiment_id: '187878786416457278'
+lifecycle_stage: active
+run_id: 13e7d63e798a434c82bc75231c04ba5b
+run_name: unleashed-fish-284
+run_uuid: 13e7d63e798a434c82bc75231c04ba5b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740459401007
+status: 3
+tags: []
+user_id: nileshkishore

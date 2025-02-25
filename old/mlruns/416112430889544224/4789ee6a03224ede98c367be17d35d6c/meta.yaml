@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nileshkishore/Desktop/langchain_folder/old/mlruns/416112430889544224/4789ee6a03224ede98c367be17d35d6c/artifacts
+end_time: 1740466460857
+entry_point_name: ''
+experiment_id: '416112430889544224'
+lifecycle_stage: active
+run_id: 4789ee6a03224ede98c367be17d35d6c
+run_name: deepseek_sample_run
+run_uuid: 4789ee6a03224ede98c367be17d35d6c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740466451216
+status: 3
+tags: []
+user_id: nileshkishore

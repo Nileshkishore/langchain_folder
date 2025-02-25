@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nileshkishore/Desktop/langchain_folder/old/mlruns/187878786416457278/a4a44e832620486281ac48cb8afdc67a/artifacts
+end_time: 1740458611583
+entry_point_name: ''
+experiment_id: '187878786416457278'
+lifecycle_stage: active
+run_id: a4a44e832620486281ac48cb8afdc67a
+run_name: thoughtful-goose-125
+run_uuid: a4a44e832620486281ac48cb8afdc67a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740458611559
+status: 3
+tags: []
+user_id: nileshkishore

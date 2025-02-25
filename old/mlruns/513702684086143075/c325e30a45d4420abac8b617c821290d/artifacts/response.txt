@@ -1,0 +1,7 @@
+Quantum computing is a new way of processing information that's different from traditional computers. Here's a simplified explanation:
+
+**Classical Computing**
+
+Traditional computers use "bits" to store and process information. Bits are either 0 or 1, like a light switch that's either on or off.
+
+Imagine you have a combination lock with 10 numbers (0-9). Each number can be either 0 or 1, so there are 2^10 = 1024 possible combinations.

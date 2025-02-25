@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nileshkishore/Desktop/langchain_folder/old/mlruns/187878786416457278/cdb236a0b1df408c80a54e17f95e3ddd/artifacts
+end_time: 1740459043291
+entry_point_name: ''
+experiment_id: '187878786416457278'
+lifecycle_stage: active
+run_id: cdb236a0b1df408c80a54e17f95e3ddd
+run_name: tasteful-midge-61
+run_uuid: cdb236a0b1df408c80a54e17f95e3ddd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740459043269
+status: 3
+tags: []
+user_id: nileshkishore

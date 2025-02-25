@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nileshkishore/Desktop/langchain_folder/old/mlruns/187878786416457278/45931fce38054c73ae6d34b75075b2f3/artifacts
+end_time: 1740466930873
+entry_point_name: ''
+experiment_id: '187878786416457278'
+lifecycle_stage: active
+run_id: 45931fce38054c73ae6d34b75075b2f3
+run_name: amazing-pig-228
+run_uuid: 45931fce38054c73ae6d34b75075b2f3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740466910763
+status: 3
+tags: []
+user_id: nileshkishore

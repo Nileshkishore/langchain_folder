@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nileshkishore/Desktop/langchain_folder/old/mlruns/513702684086143075/953b6e4c179747479ad7468224c17ef4/artifacts
+end_time: 1740459632963
+entry_point_name: ''
+experiment_id: '513702684086143075'
+lifecycle_stage: active
+run_id: 953b6e4c179747479ad7468224c17ef4
+run_name: ollama_llama_test
+run_uuid: 953b6e4c179747479ad7468224c17ef4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740459611000
+status: 4
+tags: []
+user_id: nileshkishore

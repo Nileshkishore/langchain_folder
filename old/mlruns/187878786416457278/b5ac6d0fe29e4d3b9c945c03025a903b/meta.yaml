@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nileshkishore/Desktop/langchain_folder/old/mlruns/187878786416457278/b5ac6d0fe29e4d3b9c945c03025a903b/artifacts
+end_time: 1740467177314
+entry_point_name: ''
+experiment_id: '187878786416457278'
+lifecycle_stage: active
+run_id: b5ac6d0fe29e4d3b9c945c03025a903b
+run_name: mercurial-fox-558
+run_uuid: b5ac6d0fe29e4d3b9c945c03025a903b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740467173678
+status: 3
+tags: []
+user_id: nileshkishore

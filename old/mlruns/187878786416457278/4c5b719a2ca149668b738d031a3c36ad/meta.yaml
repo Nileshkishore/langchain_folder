@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nileshkishore/Desktop/langchain_folder/old/mlruns/187878786416457278/4c5b719a2ca149668b738d031a3c36ad/artifacts
+end_time: 1740466728239
+entry_point_name: ''
+experiment_id: '187878786416457278'
+lifecycle_stage: active
+run_id: 4c5b719a2ca149668b738d031a3c36ad
+run_name: rag_query_who are you
+run_uuid: 4c5b719a2ca149668b738d031a3c36ad
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740466720632
+status: 3
+tags: []
+user_id: nileshkishore

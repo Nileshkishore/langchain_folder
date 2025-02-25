@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nileshkishore/Desktop/langchain_folder/old/mlruns/187878786416457278/9d8e8a95de41429c8635bef905c6aeb1/artifacts
+end_time: 1740459216769
+entry_point_name: ''
+experiment_id: '187878786416457278'
+lifecycle_stage: active
+run_id: 9d8e8a95de41429c8635bef905c6aeb1
+run_name: painted-wolf-420
+run_uuid: 9d8e8a95de41429c8635bef905c6aeb1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740459216745
+status: 3
+tags: []
+user_id: nileshkishore

@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nileshkishore/Desktop/langchain_folder/old/mlruns/187878786416457278/375b8ab797a644219fd961f8eb7f2328/artifacts
+end_time: 1740458724283
+entry_point_name: ''
+experiment_id: '187878786416457278'
+lifecycle_stage: active
+run_id: 375b8ab797a644219fd961f8eb7f2328
+run_name: stylish-koi-354
+run_uuid: 375b8ab797a644219fd961f8eb7f2328
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740458724263
+status: 3
+tags: []
+user_id: nileshkishore
